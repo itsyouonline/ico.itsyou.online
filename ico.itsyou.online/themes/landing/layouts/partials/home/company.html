@@ -1,0 +1,46 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "company" }}
+        <div class="container" id="company">
+           <div class="about_box">
+              <h2>{{ .Params.header }}<br>
+                 <small>{{ .Params.header_small }}</small>
+              </h2>
+              <p>{{ .Content }}</p>
+              <blockquote class="blockquote">
+                 <img src="img/{{ .Params.quote_marks }}" class="quote-image" width="45" height="45">
+                 <div>
+                    <p class="about_comment">{{ .Params.comment }}</p>
+                    <p class="about_comment_author">{{ .Params.comment_author }}</p>
+                 </div>
+              </blockquote>
+              <div class="about_box__bt">
+                 <div class="about_box__city">
+                    <div class="about_box__city-flag">
+                       <img src="img/{{ .Params.flag }}" alt="">
+                    </div>
+                    <!--.about_box__city-flag-->
+                    <div class="about_box__info">
+                       <p>{{ .Params.about_box__info }}</p>
+                       <span class="place">{{ .Params.place }}</span>
+                    </div>
+                    <!--.about_box__info-->
+                 </div>
+                 <!--.about_box__city-->
+                 <div class="about_box__links">
+                    <ul class="list-unstyled">
+                       <li><a target="_blank" href="#">
+                          <button class="btn btn-green">{{ .Params.about_box__btn }}</button>
+                          </a>
+                       </li>
+                    </ul>
+                 </div>
+                 <!--.about_box__links-->
+              </div>
+              <!--.about_box__bt-->
+           </div>
+           <!--.about_box-->
+        </div>
+    {{end}}
+  {{end}}
+{{end}}

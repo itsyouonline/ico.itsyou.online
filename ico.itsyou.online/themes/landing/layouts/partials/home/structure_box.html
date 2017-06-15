@@ -1,0 +1,270 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "structure_box" }}
+    <!--.details_box-->
+    <div class="structure_box">
+       <div class="container">
+          <div class="structure_box__in">
+             <div class="structure_box__title">
+                <h3>{{ .Params.structure_box }}</h3>
+                <p>{{ .Params.paragraph }}</p>
+             </div>
+             <!--.structure_box__title-->
+             <h4>{{ .Params.structure_box__title }}</h4>
+             <div id="pieChart" class="visible-xs" d3pie="0.2.1">
+                <svg width="350" height="320">
+                   <text x="175" y="315" id="p0_footer" class="p0_footer" text-anchor="left" fill="#666666" style="font-size: 14px; font-family: arial;"></text>
+                   <g transform="translate(175,162.5)" class="p0_pieChart">
+                      <g class="p0_arc" transform="rotate(0)">
+                         <path id="p0_segment0" fill="#A4BE39" style="stroke: rgb(255, 255, 255); stroke-width: 1;" data-index="0" d="M6.123233995736766e-15,-100A100,100,0,0,1,30.901699437494745,-95.10565162951535L0,0Z"></path>
+                      </g>
+                      <g class="p0_arc" transform="rotate(18)">
+                         <path id="p0_segment1" fill="#0C9DD9" style="stroke: rgb(255, 255, 255); stroke-width: 1;" data-index="1" d="M6.123233995736766e-15,-100A100,100,0,0,1,12.533323356430426,-99.21147013144778L0,0Z"></path>
+                      </g>
+                      <g class="p0_arc" transform="rotate(25.200000000000003)">
+                         <path id="p0_segment2" fill="#207995" style="stroke: rgb(255, 255, 255); stroke-width: 1;" data-index="2" d="M6.123233995736766e-15,-100A100,100,0,1,1,-42.57792915650722,-90.48270524660198L0,0Z"></path>
+                      </g>
+                   </g>
+                   <g class="p0_labels-inner">
+                      <g id="p0_labelGroup0-inner" data-index="0" class="p0_labelGroup-inner" style="opacity: 0;"></g>
+                      <g id="p0_labelGroup1-inner" data-index="1" class="p0_labelGroup-inner" style="opacity: 0;"></g>
+                      <g id="p0_labelGroup2-inner" data-index="2" class="p0_labelGroup-inner" style="opacity: 0;"></g>
+                   </g>
+                   <g class="p0_labels-outer">
+                      <g id="p0_labelGroup0-outer" data-index="0" class="p0_labelGroup-outer" style="opacity: 0;">
+                         <text id="p0_segmentMainLabel0-outer" class="p0_segmentMainLabel-outer" style="font-size: 12px; font-family: open sans; fill: rgb(51, 51, 51);">{{ .Params.segmentMainLabel_1 }}</text>
+                         <text id="p0_segmentPercentage0-outer" class="p0_segmentPercentage-outer" style="font-size: 12px; font-family: open sans; fill: rgb(0, 0, 0);">{{ .Params.segmentPercentage_1 }}</text>
+                      </g>
+                      <g id="p0_labelGroup1-outer" data-index="1" class="p0_labelGroup-outer" style="opacity: 0;">
+                         <text id="p0_segmentMainLabel1-outer" class="p0_segmentMainLabel-outer" style="font-size: 12px; font-family: open sans; fill: rgb(51, 51, 51);">{{ .Params.segmentMainLabel_2 }}</text>
+                         <text id="p0_segmentPercentage1-outer" class="p0_segmentPercentage-outer" style="font-size: 12px; font-family: open sans; fill: rgb(0, 0, 0);">{{ .Params.segmentPercentage_2 }}</text>
+                      </g>
+                      <g id="p0_labelGroup2-outer" data-index="2" class="p0_labelGroup-outer" style="opacity: 0;">
+                         <text id="p0_segmentMainLabel2-outer" class="p0_segmentMainLabel-outer" style="font-size: 12px; font-family: open sans; fill: rgb(51, 51, 51);">{{ .Params.segmentMainLabel_3 }}</text>
+                         <text id="p0_segmentPercentage2-outer" class="p0_segmentPercentage-outer" style="font-size: 12px; font-family: open sans; fill: rgb(0, 0, 0);">{{ .Params.segmentPercentage_3 }}</text>
+                      </g>
+                   </g>
+                </svg>
+             </div>
+             <div class="structure_box__graph hidden-xs">
+                <div class="structure_box__graph-st">
+                   <span>{{ .Params.graph_st }}</span>
+                   <span>{{ .Params.graph_end }}</span>
+                </div>
+                <div class="structure_box__graph-in">
+                   <div class="structure_box__pr color1" data-prc="75" style="width: 75%;">
+                      <div class="structure_box__pr-in">
+                         <div class="structure_box__lbl">
+                            <span>93%</span>
+                            <p>Distributed to users</p>
+                         </div>
+                      </div>
+                      <!--.structure_box__pr-in-->
+                   </div>
+                   <!--.structure_box__pr-->
+                   <div class="structure_box__pr color2" data-prc="15" style="width: 15%;">
+                      <div class="structure_box__pr-in">
+                         <div class="structure_box__lbl">
+                            <span>{{ .Params.box1__lbl_span }}</span>
+                            <p>{{ .Params.box1__lbl_paragraph }}</p>
+                         </div>
+                      </div>
+                      <!--.structure_box__pr-in-->
+                   </div>
+                   <!--.structure_box__pr-->
+                   <div class="structure_box__pr color3" data-prc="10" style="width: 10%;">
+                      <div class="structure_box__pr-in">
+                         <div class="structure_box__lbl">
+                            <span>{{ .Params.box2__lbl_span }}</span>
+                            <p>{{ .Params.box2__lbl_paragraph }}</p>
+                         </div>
+                      </div>
+                      <!--.structure_box__pr-in-->
+                   </div>
+                   <!--.structure_box__pr-->
+                </div>
+                <!--.structure_box__graph-in-->
+             </div>
+             <!--.structure_box__graph-->
+             <div class="bonuses">
+                <!--              <div class="bonuses__title">
+                   <h3>Bonuses</h3>
+                   </div>
+                   <div class="bonuses__graph">
+                   <ul class="list-unstyled">
+                       <li class="gr1">
+                           <span>Day 1</span>
+                           <div class="gr_line"></div>
+                           <p>+25%</p>
+                       </li>
+
+                       <li class="gr2">
+                           <span>Day 2-7</span>
+                           <div class="gr_line"></div>
+                           <p>+20%</p>
+                       </li>
+
+                       <li class="gr3">
+                           <span>Week 2</span>
+                           <div class="gr_line"></div>
+                           <p>+15%</p>
+                       </li>
+
+                       <li class="gr4">
+                           <span>Week 3</span>
+                           <div class="gr_line"></div>
+                           <p>+10%</p>
+                       </li>
+
+                       <li class="gr5">
+                           <span>Week 4</span>
+                           <div class="gr_line"></div>
+                           <p>+5%</p>
+                       </li>
+
+                       <li class="gr6">
+                           <span>Week 5</span>
+                           <div class="gr_line"></div>
+                           <p>+0%</p>
+                       </li>
+                   </ul>
+                   </div> -->
+                <!--.bonuses__graph-->
+                <div class="bonuses__title">
+                   <h3>{{ .Params.bonuses__title }}</h3>
+                </div>
+                <!--.bonuses__title-->
+                <div class="bounties__graph clearfix">
+                   <ul class="list-unstyled">
+                      <li class="gr7 green-item">
+                         <div class="graph" data-value="0.25">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.green_item1_header }}</h4>
+                            <p>{{ .Params.green_item1_paragraph }}</p>
+                         </div>
+                      </li>
+                      <li class="gr8 green-item">
+                         <div class="graph" data-value="0.20">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.green_item2_header }}</h4>
+                            <p>{{  .Params.green_item2_paragraph }}</p>
+                         </div>
+                      </li>
+                      <li class="gr9 green-item">
+                         <div class="graph" data-value="0.15">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.green_item3_header }}</h4>
+                            <p>{{ .Params.green_item3_paragraph }}</p>
+                         </div>
+                      </li>
+                      <li class="gr10 green-item">
+                         <div class="graph" data-value="0.10">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.green_item4_header }}</h4>
+                            <p>{{ .Params.green_item4_paragraph }}</p>
+                         </div>
+                      </li>
+                      <li class="gr11 green-item">
+                         <div class="graph" data-value="0.05">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.green_item5_header }}</h4>
+                            <p>{{ .Params.green_item5_paragraph }}</p>
+                         </div>
+                      </li>
+                      <li class="gr12 green-item">
+                         <div class="graph" data-value="0.0">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.green_item6_header }}</h4>
+                            <p>{{ .Params.green_item6_paragraph }}</p>
+                         </div>
+                      </li>
+                   </ul>
+                </div>
+                <!--.bounties__graph-->
+             </div>
+             <!--.bonuses-->
+             <div class="bounties">
+                <div class="bounties__title">
+                   <h3>{{ .Params.bounties__title }}</h3>
+                   <p>{{ .Params.box3__lbl_paragraph }}</p>
+                </div>
+                <!--.bounties__title-->
+                <div class="bounties__graph clearfix">
+                   <ul class="list-unstyled">
+                      <li class="gr1">
+                         <div class="graph" data-value="0.15">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.bounties_item1_header }}</h4>
+                            <p>{{ .Params.bounties_item1_paragraph }}</p>
+                         </div>
+                      </li>
+                      <li class="gr2">
+                         <div class="graph" data-value="0.15">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.bounties_item2_header  }}</h4>
+                            <p>{{ .Params.bounties_item2_paragraph }}</p>
+                         </div>
+                      </li>
+                      <li class="gr3">
+                         <div class="graph" data-value="0.1">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <h4>{{ .Params.bounties_item3_header }}</h4>
+                         <p>{{ .Params.bounties_item3_paragraph }}</p>
+                      </li>
+                      <li class="gr4">
+                         <div class="graph" data-value="0.1">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.bounties_item4_header }}</h4>
+                            <p>{{ .Params.bounties_item4_paragraph }}</p>
+                         </div>
+                      </li>
+                      <li class="gr5">
+                         <div class="graph" data-value="0.10">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.bounties_item5_header }}</h4>
+                            <p>{{ .Params.bounties_item5_paragraph }}</p>
+                         </div>
+                      </li>
+                      <li class="gr6">
+                         <div class="graph" data-value="0.4">
+                            <canvas width="67" height="67"></canvas>
+                         </div>
+                         <div>
+                            <h4>{{ .Params.bounties_item6_header }}</h4>
+                            <p>{{ .Params.bounties_item6_paragraph }}</p>
+                         </div>
+                      </li>
+                   </ul>
+                </div>
+                <!--.bounties__graph-->
+             </div>
+             <!--.bounties-->
+          </div>
+          <!--.structure_box__in-->
+       </div>
+    </div>
+    <!--.structure_box-->
+    {{end}}
+  {{end}}
+{{end}}

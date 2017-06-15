@@ -1,0 +1,51 @@
+baseurl = "/"
+LanguageCode = "en"
+title = "ico.itsyou.online"
+theme = "landing"
+contentdir = "content"
+staticdir = "static"
+publishdir = "public"
+relativeURLs = true
+uglyUrls = true
+
+[permalinks]
+    post = "/:filename"
+    # Navigation Links
+    #   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+    #   desired widget in your `content/header/` folder.
+    #   The weight parameter defines the order that the links will appear in.
+
+    [[menu.main]]
+      name = "Company"
+      url = "#company"
+      weight = 1
+
+    [[menu.main]]
+      name = "Milestones"
+      url = "#milestones"
+      weight = 2
+
+    [[menu.main]]
+      name = "ICO"
+      url = "#ico"
+      weight = 3
+
+    [[menu.main]]
+      name = "Team"
+      url = "#team"
+      weight = 4
+
+    [[menu.main]]
+      name = "Documents"
+      url = "#documents"
+      weight = 5
+
+    [[menu.main]]
+      name = "Contacts"
+      url = "#contacts"
+      weight = 6
+
+    [[menu.main]]
+      name = "FAQ"
+      url = "#"
+      weight = 7

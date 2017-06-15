@@ -1,0 +1,106 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "footer" }}
+    {{ if eq .Title "footer" }}
+    <div class="footer" id="contacts">
+       <div class="container">
+          <div class="footer__subscribe">
+             <h3>{{ .Params.header }}</h3>
+             <form action="#">
+                <div class="inp-group">
+                   <!-- if error = add class inp-error -->
+                   <input class="inp-style" name="EMAIL" placeholder="Your email" type="email">
+                   <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                   <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                      <input name="b_6818e0e62aeb6cc979bceb198_e587184c7e" tabindex="-1" type="text">
+                   </div>
+                </div>
+                <!--.inp-group-->
+                <p class="error"></p>
+                <button class="btn btn-green">{{ .Params.form_btn }} </button>
+             </form>
+          </div>
+          <!--.footer__subscribe-->
+          <div class="footer__social">
+             <h3>{{ .Params.footer__subscribe_header }}</h3>
+             <ul class="list-unstyled">
+                <li class="tw block_img"><a target="_blank" href="{{ .Params.twitter_url }}">{{ .Params.twitter_txt }}</a></li>
+                <li class="fb block_img"><a target="_blank" href="{{ .Params.facebook_url }}">{{ .Params.Facebook }}</a>
+                </li>
+                <li class="sl block_img"><a data-dismiss="modal" data-toggle="modal" data-target="#modal_subscribe_slack" href="{{ .Params.slack_url }}">{{ .Params.slack_txt }}</a></li>
+                <li class="tel">
+                   <a href="{{ .Params.telegram_url }}" target="_blank">
+                      <svg width="23" height="23" viewBox="0 0 23 20" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+                         <title>Page 1</title>
+                         <defs>
+                            <rect id="a" width="40" height="40" rx="4"></rect>
+                            <mask id="b" x="0" y="0" width="40" height="40" fill="#fff">
+                               <use xlink:href="#a"></use>
+                            </mask>
+                            <path id="c" d="M0 19.643h22.457V.043H0z"></path>
+                         </defs>
+                         <g transform="translate(-9 -10)" fill="none" fill-rule="evenodd">
+                            <use stroke="#787878" mask="url(#b)" stroke-width="4" xlink:href="#a"></use>
+                            <g transform="translate(9 10.028)">
+                               <mask id="d" fill="#fff">
+                                  <use xlink:href="#c"></use>
+                               </mask>
+                               <path d="M17.03 18.12c.18.067.323.08.43.034.124-.05.21-.172.246-.233L20.96 1.514c-.147.02-.344.076-.473.132l-.027.012L1.816 8.97c-.01.004-.02.008-.03.01-.088.033-.193.09-.267.14.062.055.163.118.25.152l4.68 1.575c.028.01.056.02.084.035l2.786 1.346c.045.022.087.048.127.078l7.584 5.815zm.286 1.523c-.27 0-.588-.056-.945-.212-.053-.022-.104-.053-.15-.09l-7.604-5.827L5.94 12.22 1.29 10.653c-.004 0-.008-.002-.01-.004-.118-.04-1.15-.434-1.272-1.41-.105-.84.623-1.405 1.285-1.637L19.913.3c.305-.132 1.277-.49 1.973-.034.213.14.57.473.57 1.15 0 .05-.004.096-.013.143l-3.32 16.74c-.01.044-.022.087-.04.13-.03.077-.327.774-1.067 1.078-.177.073-.413.135-.7.135z" fill="#FFF" mask="url(#d)"></path>
+                            </g>
+                            <path d="M20.94 25.167l-3.03 2.763c0 .09-.497.09-.497 0l.58-5.065.032-.09s8.498-7.64 8.846-7.964c.35-.324.233-.393.233-.393.024-.395-.627 0-.627 0l-11.26 7.15s1.416 4.645 1.694 5.527c.28.882.443.866.503.866" fill="#FFF"></path>
+                            <path d="M16.077 21.887l.94 3.072.25-2.18c.006-.054.018-.108.037-.16l.032-.09c.04-.115.11-.217.2-.3 1.307-1.173 3.146-2.827 4.81-4.323l-6.27 3.98zm1.584 6.842c-.135 0-.253-.017-.355-.044-.627-.066-.892-.74-1.092-1.372-.277-.876-1.64-5.343-1.697-5.533-.096-.313.03-.653.307-.83l11.26-7.15.014-.01c.36-.217.88-.42 1.324-.154.22.132.362.35.403.607.012.043.02.088.026.133.043.422-.234.74-.48.97-.325.303-7.406 6.67-8.674 7.81l-.392 3.425 2.143-1.954c.298-.272.76-.25 1.033.048.272.3.25.76-.048 1.033l-2.97 2.707c-.144.176-.394.315-.8.315z" fill="#FFF"></path>
+                            <path d="M20.94 25.898c-.158 0-.317-.05-.45-.155l-2.947-2.302c-.32-.248-.375-.707-.126-1.026.248-.318.708-.374 1.026-.126l2.947 2.303c.318.25.375.71.126 1.027-.144.185-.36.28-.577.28" fill="#FFF"></path>
+                         </g>
+                      </svg>
+                   </a>
+                </li>
+             </ul>
+             <!-- <h3>Contact us directly: <a class='contact_us' href="mailto:info@polybius.io"
+                style="color: #fff; text-decoration: underline;">info@polybius.io</a>
+                </h3> -->
+          </div>
+          <!--.footer__social-->
+          <div class="footer__terms_and_policy">
+             <a target="_blank" href="{{ .Params.terms_and_conditions_url }}">{{ .Params.terms_and_conditions_txt }}</a>
+             <a target="_blank" href="{{ .Params.privacy_policy_url }}">{{ .Params.privacy_policy_txt }}</a>
+          </div>
+          <div class="footer__contacts-wrap">
+             <div class="footer__contacts__line">
+                <div>{{ .Params.phone_txt }}</div>
+                <div>{{ .Params.phone_no }}</div>
+             </div>
+             <span class="footer__contacts-delimiter">|</span>
+             <div class="footer__contacts__line">
+                <div>{{ .Params.email_txt }}</div>
+                <a href="mailto:{{ .Params.email_url }}">{{ .Params.email_url }}</a>
+             </div>
+             <span class="footer__contacts-delimiter">|</span>
+             <div class="footer__contacts__line">
+                <div>{{ .Params.post_txt }}</div>
+                <span>{{ .Params.post_add }}</span>
+             </div>
+          </div>
+       </div>
+       <!--.container-->
+       <div class="footer__copy">
+          <div class="footer__copy__column">
+             <div class="website__owned__wrap">
+                <p>{{ .Content }}</p>
+             </div>
+          </div>
+          <div class="footer__copy__column">
+             <div class="payments-wrap">
+                <a href="{{ .Params.payments1_url }}" target="_blank"><img src="img/{{ .Params.payments1_img }}"></a>
+                <a href="{{ .Params.payments2_url }}" target="_blank"><img src="img/{{ .Params.payments2_img }}"></a>
+                <a href="{{ .Params.payments3_url }}" target="_blank"><img src="img/{{ .Params.payments3_img }}"></a>
+             </div>
+          </div>
+       </div>
+       <!--<div class="footer__copy">-->
+       <!--<p>© 2017 Polybius Foundation OÜ. All rights reserved</p>-->
+       <!--</div>&lt;!&ndash;.footer__copy&ndash;&gt;-->
+    </div>
+    <!--.footer-->
+    </div>
+    {{end}}
+  {{end}}
+{{end}}

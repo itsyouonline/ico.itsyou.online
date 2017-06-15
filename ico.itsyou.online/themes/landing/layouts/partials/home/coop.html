@@ -1,0 +1,91 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "coop" }}
+        <div class="coop_with__wrapper">
+           <div class="coop_with container">
+              <div class="coop_with__top">
+                 <h3>{{ .Params.header }}</h3>
+              </div>
+              <div class="coop_with__body">
+                 <ul class="coop_with_bar">
+                    <li>
+                       <div>
+                          <a target="_blank" href="{{ .Params.img1_url }}"><img src="{{ .Params.img1 }}" alt="image"></a>
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                          <a target="_blank" href="{{ .Params.img2_url }}"><img src="{{ .Params.img2 }}" alt="image"></a>
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                          <a target="_blank" href="{{ .Params.img3_url }}"><img src="{{ .Params.img3 }}" alt="image"></a>
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                          <a target="_blank" href="{{ .Params.img4_url }}"><img src="{{ .Params.img4 }}" alt="image"></a>
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                          <a target="_blank" href="{{ .Params.img5_url }}"><img src="{{ .Params.img5 }}" alt="image"></a>
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                          <a target="_blank" href="{{ .Params.img6_url }}"><img src="{{ .Params.img6 }}" alt="image"></a>
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                          <a target="_blank" href="{{ .Params.img7_url }}"><img src="{{ .Params.img7 }}" alt="image"></a>
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                          <a target="_blank" href="{{ .Params.img8_url }}"><img src="{{ .Params.img8 }}" alt="image"></a>
+                       </div>
+                    </li>
+                    <li>
+                       <div>
+                          <a target="_blank" href="{{ .Params.img9_url }}"><img src="{{ .Params.img9 }}" alt="image"></a>
+                       </div>
+                    </li>
+                 </ul>
+                 <!--<div class="owl-carousel owl-theme" id="coop-carousel">
+                    <a class="partner" target="_blank" href="https://advendor.net/" class="partner">
+                     <img src="img/partners/Advendor.png" alt="Advendor">
+                    </a>
+                    <a class="partner" target="_blank" href="https://www.ambisafe.co/" class="partner">
+                     <img src="img/partners/AmbiSafe.png" alt="Ambisafe">
+                    </a>
+                    <a class="partner" target="_blank" href="http://atticlab.net/" class="partner">
+                     <img src="img/partners/AtticLab.png" alt="AtticLab">
+                    </a>
+                    <a class="partner" target="_blank" href="http://www.cblairbright.com/" class="partner">
+                     <img src="img/partners/BrightLawFirm.png" alt="BrightLawFirm">
+                    </a>
+                    <a class="partner" target="_blank" href="https://cryptopay.me/" class="partner">
+                     <img src="img/partners/CryptoPay.png" alt="CryptoPay">
+                    </a>
+                    <a class="partner" target="_blank" href="https://emercoin.com/" class="partner">
+                     <img src="img/partners/Emercoin.png" alt="Emercoin">
+                    </a>
+                    <a class="partner" target="_blank" href="http://www.europarl.europa.eu/" class="partner">
+                     <img src="img/partners/EuropeanParliament.png" alt="European Parliament">
+                    </a>
+                    <a class="partner" target="_blank" href="https://webforms.ey.com/ch/en/home" class="partner">
+                     <img src="img/partners/EY.png" alt="EY">
+                    </a>
+                    <a class="partner" target="_blank" href="https://hashflare.io/" class="partner">
+                     <img src="img/partners/HashFlare.png" alt="HashFlare">
+                    </a>
+                    </div>-->
+              </div>
+           </div>
+        </div>
+    {{end}}
+  {{end}}
+{{end}}

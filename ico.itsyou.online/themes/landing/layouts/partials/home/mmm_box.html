@@ -1,0 +1,51 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "mmm_box" }}
+        <div class="container mmm_box clearfix">
+           <div class="mmm_box__in">
+              <div class="mmm_box__bbn hidden-sm hidden-xs">
+                 <div class="title">
+                    <h3>{{ .Params.header }}</h3>
+                 </div>
+                 <div class="box box1">
+                    <h4>{{ .Params.box1_header }}</h4>
+                    <p>{{ .Params.box1_paragraph }}</p>
+                 </div>
+                 <!--.box1-->
+                 <div class="or">{{ .Params.or }}</div>
+                 <div class="box box2">
+                    <h4>{{ .Params.box2_header }}</h4>
+                    <p>{{ .Params.box2_paragraph }}</p>
+                 </div>
+                 <!--.box2-->
+              </div>
+              <!--.mmm_box__bbn-->
+              <div class="mmm_box__txt">
+                 <h3>{{ .Params.mmm_box__txt_header }}</h3>
+                 <p>{{ .Content }}</p>
+              </div>
+              <!--.mmm_box__txt-->
+              <div class="mmm_box__bbn visible-sm visible-xs">
+                 <div class="title">
+                    <h3>{{ .Params.header }}</h3>
+                 </div>
+                 <div class="box box1">
+                    <h4>{{ .Params.box1_header }}</h4>
+                    <p>{{ .Params.box1_paragraph }}</p>
+                 </div>
+                 <!--.box1-->
+                 <div class="or">{{ .Params.or }}</div>
+                 <div class="box box2">
+                    <h4>{{ .Params.box2_header }}</h4>
+                    <p>{{ .Params.box2_paragraph }}</p>
+                 </div>
+                 <!--.box2-->
+              </div>
+              <!--.mmm_box__bbn-->
+           </div>
+           <!--.mmm_box__in-->
+        </div>
+        <!--.mmm_box-->
+      {{end}}
+    {{end}}
+  {{end}}

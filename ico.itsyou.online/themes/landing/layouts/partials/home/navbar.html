@@ -1,0 +1,88 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "navbar" }}
+  <body class="bg-timer">
+     <div id="wrapper">
+      <div class="top top--white top--fixed">
+         <div class="container">
+            <div class="top__logo">
+               <a href="">
+               <img src="img/{{ .Params.logo_white }}" alt="#" class="top__logo-w">
+               <img src="img/{{ .Params.logo_dark }}" alt="#" class="top__logo-b">
+               </a>
+            </div>
+            <!--.top__logo-->
+            <div class="nav-bar hidden-xs top__nav-line">
+               <div style="display: inline-block; margin: auto;">
+                  <div class="top__nav">
+                     <ul class="list-unstyled">
+                       {{ range .Site.Menus.main }}
+                           {{ if .HasChildren }}
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-88sub item-has-children">
+                         <a title="Demos" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                           {{ .Name }}
+                           <span class="caret"></span>
+                         </a>
+                         <ul class="sub-menu dropdown-menu">
+                           {{ range .Children }}
+                           <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                             <a href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
+                               {{ .Pre }}
+                               <span>{{ .Name }}</span>
+                             </a>
+                           </li>
+                           {{ end }}
+                         </ul>
+                        </li>
+                        {{else}}
+                        <li class="hidden-sm">
+                            <a title="{{ .URL }}" href="{{ .URL | relLangURL }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
+                              {{ .Name }}
+                            </a>
+                          </li>
+                          {{end}}
+                        {{end}}
+                     </ul>
+                  </div>
+                  <!--.top__nav-->
+                  <!-- <div class="top__lang hidden-xs">
+                     <div class="top__lang-current dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="top__lang">
+                        eng
+                     </div> -->
+                     <!--.top__lang-current-->
+                     <!-- <div class="dropdown-menu top__lang-list hidden-xs" aria-labelledby="top__lang">
+                        <ul class="list-unstyled">
+                           <li class="active"><a href="https://polybius.io/en/">eng</a></li>
+                           <li><a href="https://polybius.io/rus/">rus</a></li>
+                           <li><a href="https://polybius.io/chn/">chn</a></li>
+                           <li><a href="https://polybius.io/de/">ger</a></li>
+                           <li><a href="https://polybius.io/es/">spa</a></li>
+                           <li><a href="https://polybius.io/fr/">fre</a></li>
+                           <li><a href="https://polybius.io/it/">ita</a></li>
+                           <li><a href="https://polybius.io/pt/">por</a></li>
+                           <li><a href="https://polybius.io/ja/">jpn</a></li>
+                           <li><a href="https://polybius.io/ko/">kor</a></li>
+                        </ul>
+                     </div>
+                  </div> -->
+                  <!--.top__lang-->
+                  <div class="top__btn hidden-xs">
+                     <a href="{{ .Params.button_url }}">
+                     <button class="btn btn-white">{{ .Params.button_text }}
+                     </button>
+                     </a>
+                  </div>
+                  <!--.top__btn-->
+               </div>
+            </div>
+            <!--.col-->
+         </div>
+         <!--.container-->
+         <div class="btn-sandwich visible-sm visible-xs" data-dismiss="modal" data-toggle="modal" data-target="#mobile_menu">
+            <i></i><i></i><i></i>
+         </div>
+         <!--.mobile_top__snd-->
+      </div>
+      {{end}}
+    {{end}}
+{{end}}

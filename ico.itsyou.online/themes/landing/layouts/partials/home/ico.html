@@ -1,0 +1,12 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "ico" }}
+      <div class="details_box container" id="ico">
+         <h3>{{ .Params.header }}</h3>
+         <dl>
+          {{ .Content }}
+         </dl>
+      </div>
+    {{end}}
+  {{end}}
+{{end}}

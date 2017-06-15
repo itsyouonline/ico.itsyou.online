@@ -1,0 +1,281 @@
+<!-- <script type='text/javascript' src='http://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script> -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery_002.js"></script>
+<script src="js/tooltipster.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/circle-progress.js"></script>
+<script src="js/4b11b26cea629c34d16a12b35e16d404.js"></script>
+<script>
+   $(function () {
+       var validateEmail = function (email) {
+           var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+           return re.test(email);
+       }
+
+       var submitSubscribeForm = function ($form) {
+           var submitUrl = $form.attr("action");
+
+           var userLang = navigator.language || navigator.userLanguage;
+           if (userLang.toLowerCase() === 'ru' || userLang.toLowerCase() === 'uk') {
+               submitUrl = 'https://polybius.us14.list-manage.com/subscribe/post-json?u=6818e0e62aeb6cc979bceb198&amp;id=8dabf8ad23'
+           }
+
+           $.ajax({
+               type: "GET",
+               url: submitUrl,
+               data: $form.serialize(),
+               cache: false,
+               dataType: "jsonp",
+               jsonp: "c", // trigger MailChimp to return a JSONP response
+               contentType: "application/json; charset=utf-8",
+
+               error: function (error) {
+                   // According to jquery docs, this is never called for cross-domain JSONP requests
+               },
+               success: function (data) {
+                   var resultMessage = data.msg || "Sorry. Unable to subscribe. Please try again later."
+
+                   if (data.result != "success") {
+                       if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                           resultMessage = "You're already subscribed. Thank you."
+                       }
+                   } else {
+                       console.log(data.msg)
+                       $('#modal_subscribe').modal('hide');
+                       $('#modal_subscribe2').modal('show');
+                   }
+                   $('p#subscribe_error').text(resultMessage)
+                   $('p#subscribe_error').addClass('inp-error')
+               }
+           });
+       }
+       var milestone_loader = function () {
+           $('.mar_box__item-line').removeClass('mar_box__item-arrow');
+           $('.mar_box__item-line').css('width', '0%');
+           var milestone = $(this).attr("data-id");
+           $(this).children('.mar_box__item-in').children('.mar_box__item-line').css('width', '100%').addClass('mar_box__item-arrow')
+
+           $('div.mar_box__item').filter(function () {
+               return parseInt($(this).attr('data-id'), 10) < parseInt(milestone, 10)
+           }).children('.mar_box__item-in').children('.mar_box__item-line').css('width', '100%');
+           $('.mar_box__txt').hide()
+           $('.mar_box__txt').filter(function () {
+               return $(this).attr('id') == milestone
+           }).show()
+       }
+       $('div.mar_box__item').click(milestone_loader)
+
+
+       $("#subscribe-form").submit(function (event) {
+           event.preventDefault();
+           if (!validateEmail($("input#mce-EMAIL").val())) {
+               var error = "A valid email address must be provided.";
+               $('p#subscribe_error').text(error)
+               $('p#subscribe_error').addClass('inp-error')
+               return
+           }
+           submitSubscribeForm($("#subscribe-form"));
+       });
+
+       var inviteToSlack = function (email, token) {
+           $.ajax({
+               type: "POST",
+               url: 'https://polybius.slack.com/api/users.admin.invite',
+               data: {email: email, token: token, set_active: true},
+               error: function (error) {
+                   // According to jquery docs, this is never called for cross-domain JSONP requests
+               },
+               success: function (data) {
+                   console.log(data.ok)
+                   if (data.ok != true) {
+                       if (data.error == 'already_invited') {
+                           resultMessage = "You're already invited. Thank you."
+                       } else if (data.error == 'already_in_team') {
+                           resultMessage = "You are already in team"
+                       } else {
+                           resultMessage = data.error;
+                       }
+                       $('p#subscribe_slack_error').text(resultMessage)
+                       $('p#subscribe_slack_error').addClass('inp-error')
+                   } else {
+                       console.log(data)
+                       $('#modal_subscribe_slack').modal('hide');
+                       $('#modal_subscribe2').modal('show');
+                   }
+               }
+           })
+       }
+       $("#subscribe-slack-form").submit(function (event) {
+           event.preventDefault();
+           if (!validateEmail($("input#slack_invite_email_input").val())) {
+               var error = "A valid email address must be provided.";
+               $('p#subscribe_slack_error').text(error)
+               $('p#subscribe_slack_error').addClass('inp-error')
+               return
+           }
+           inviteToSlack($("input#slack_invite_email_input").val(), 'xoxp-112932037072-114821705270-113550640512-f80f04c7b699c80ded4e0f9df09deb8e');
+       });
+   })
+</script>
+<script src="js/d3.js"></script>
+<script src="js/d3pie.js"></script>
+<script>
+   var pie = new d3pie("pieChart", {
+
+       "size": {
+           "canvasHeight": 320,
+           "canvasWidth": 350,
+           "pieOuterRadius": "80%"
+       },
+       "data": {
+           "content": [
+               {
+                   "label": "Founders",
+                   "value": 5,
+                   "color": "#A4BE39"
+               },
+               {
+                   "label": "Bounties",
+                   "value": 2,
+                   "color": "#0C9DD9"
+               },
+               {
+                   "label": "Distributed to users",
+                   "value": 93,
+                   "color": "#207995"
+               }
+           ]
+       },
+       "labels": {
+           "outer": {
+               "format": "label-percentage1",
+               "pieDistance": 30,
+           },
+           "inner": {
+               "format": "none"
+           },
+           "mainLabel": {
+               "font": "open sans",
+               "fontSize": 12,
+           },
+           "percentage": {
+               "color": "#000000",
+               "font": "open sans",
+               "fontSize": 12,
+               "decimalPlaces": 0
+           },
+           "value": {
+               "color": "#000000",
+               "font": "open sans",
+               "fontSize": 12,
+           },
+           "lines": {
+               "enabled": true,
+               "style": "straight"
+           },
+           "truncation": {
+               "enabled": true
+           }
+       },
+       "effects": {
+           "pullOutSegmentOnClick": {
+               "effect": "linear",
+               "speed": 400,
+               "size": 8
+           }
+       }
+   });
+   var getUrlParameter = function getUrlParameter(sParam) {
+       var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+           sURLVariables = sPageURL.split('&'),
+           sParameterName,
+           i;
+
+       for (i = 0; i < sURLVariables.length; i++) {
+           sParameterName = sURLVariables[i].split('=');
+
+           if (sParameterName[0] === sParam) {
+               return sParameterName[1] === undefined ? true : sParameterName[1];
+           }
+       }
+   };
+
+   (function sendUtmCampaign() {
+
+       function saveData(clickId, source, pid, SID) {
+          var url = 'https://ico.polybius.io/marketing/dummy/';
+          var params = '?clickid=' + clickId;
+          if (localStorage) {
+              localStorage.setItem('clickid', clickId)
+              if (source)
+              localStorage.setItem('source', source)
+              if (pid)
+              localStorage.setItem('pid', pid)
+              if (SID)
+              localStorage.setItem('SID', SID)
+          }
+          if (source) {
+              params += '&utm_source=' + source;
+          }
+          if (pid) {
+              params += '&pid=' + pid;
+          }
+          if (SID) {
+              params += '&SID=' + SID;
+          }
+          $('a').each(function () {
+              if ($(this).attr('href')[0] != '#')
+              $(this).attr('href', $(this).attr('href') + params)
+          });
+          $.get(url);
+       }
+
+       var clickId = getUrlParameter('clickid'),
+          source = getUrlParameter('utm_source'),
+          pid = getUrlParameter('pid'),
+          SID = getUrlParameter('SID');
+       if (clickId) {
+           saveData(clickId, source, pid, SID)
+       } else {
+           if (localStorage) {
+              clickId = localStorage.getItem('clickid'),
+              source = localStorage.getItem('utm_source'),
+              pid = localStorage.getItem('pid'),
+              SID = localStorage.getItem('SID');
+              if (clickId) {
+                 saveData(clickId, source || '', pid || '', SID || '')
+              }
+           }
+       }
+   })();
+
+</script>
+<script>
+   $(document).ready(function() {
+       $('#video-toggle').click(function() {
+           $('#youtube_player_iframe').attr('src', 'https://www.youtube.com/embed/LEQoFuJ2Zx8?rel=0&amp;showinfo=0');
+           $('#modal-video').fadeIn(200, 'linear');
+       });
+
+       $('.close-video-modal').click(function() {
+           $('#modal-video').fadeOut(200, 'linear');
+           $('#youtube_player_iframe').attr('src', '');
+       })
+   })
+</script>
+<script>
+   window.intercomSettings = {
+       app_id: "pi3vrk9r"
+   };
+</script>
+<script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/pi3vrk9r';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+<script>/* <![CDATA[ */(function(d,s,a,i,j,r,l,m,t){try{l=d.getElementsByTagName('a');t=d.createElement('textarea');for(i=0;l.length-i;i++){try{a=l[i].href;s=a.indexOf('/cdn-cgi/l/email-protection');m=a.length;if(a&&s>-1&&m>28){j=28+s;s='';if(j<m){r='0x'+a.substr(j,2)|0;for(j+=2;j<m&&a.charAt(j)!='X';j+=2)s+='%'+('0'+('0x'+a.substr(j,2)^r).toString(16)).slice(-2);j++;s=decodeURIComponent(s)+a.substr(j,m-j)}t.innerHTML=s.replace(/</g,'&lt;').replace(/\>/g,'&gt;');l[i].href='mailto:'+t.value}}catch(e){}}}catch(e){}})(document);/* ]]> */</script>
+<iframe id="intercom-frame" style="display: none;"></iframe>
+<div id="intercom-container" style="position: fixed; width: 0px; height: 0px; bottom: 0px; right: 0px; z-index: 2147483647;">
+   <div data-reactroot="" class="intercom-app intercom-app-launcher-enabled">
+      <span></span><iframe allowfullscreen="" class="intercom-launcher-frame"></iframe><span></span><!-- react-empty: 4 --><span></span><!-- react-empty: 6 -->
+   </div>
+</div>
+</body>
+</html>

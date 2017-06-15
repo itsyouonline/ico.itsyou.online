@@ -1,0 +1,305 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "usr_box" }}
+    <!--.usr_box-->
+    <div class="usr_box">
+       <div class="container">
+          <div class="usr_box__top">
+             <h3>{{ .Params.header }}</h3>
+          </div>
+          <!--.usr_box__top-->
+          <div class="usr_box__list">
+             <div class="usr_box__list-info visible-xs"></div>
+             <div class="row">
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="{{ .Params.thumb1_url }}" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/{{ .Params.thumb1_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb1_img }}">
+                         <img src="img/{{ .Params.thumb1_img }}" alt="" class="owl-lazy" style="display: none">
+                      </div>
+                      <!--.thumb-->
+                      <div class="info">
+                         <h4>{{ .Params.thumb1_header }}</h4>
+                         <p>{{ .Params.thumb1_para }}</p>
+                      </div>
+                      <!--.info-->
+                   </a>
+                   <!--.usr_box__item-->
+                </div>
+                <!--.col-->
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="{{ .Params.thumb2_url }}" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/{{ .Params.thumb2_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb2_img }}">
+                         <img src="img/{{ .Params.thumb2_img }}" alt="" class="owl-lazy" style="display: none">
+                      </div>
+                      <!--.thumb-->
+                      <div class="info">
+                         <h4>{{ .Params.thumb2_header }}</h4>
+                         <p>{{ .Params.thumb2_para }}</p>
+                      </div>
+                      <!--.info-->
+                   </a>
+                   <!--.usr_box__item-->
+                </div>
+                <!--.col-->
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="{{ .Params.thumb3_url }}" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/{{ .Params.thumb3_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb3_img }}">
+                         <img src="img/{{ .Params.thumb3_img }}" alt="" class="owl-lazy" style="display: none">
+                      </div>
+                      <!--.thumb-->
+                      <div class="info">
+                         <h4>{{ .Params.thumb3_header }}</h4>
+                         <p>{{ .Params.thumb3_para }}</p>
+                      </div>
+                      <!--.info-->
+                   </a>
+                   <!--.usr_box__item-->
+                </div>
+                <!--.col-->
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="{{ .Params.thumb4_url }}" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/{{ .Params.thumb4_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb4_img }}">
+                         <img src="img/{{ .Params.thumb4_img }}" alt="" class="owl-lazy" style="display: none">
+                      </div>
+                      <!--.thumb-->
+                      <div class="info">
+                         <h4>{{ .Params.thumb4_header }}</h4>
+                         <p>{{ .Params.thumb4_para }}</p>
+                      </div>
+                      <!--.info-->
+                   </a>
+                   <!--.usr_box__item-->
+                </div>
+                <!--.col-->
+                <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="https://www.linkedin.com/in/lewis-cohen-a3211410/" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/lewis_cohen.png" alt="https://www.linkedin.com/in/lewis-cohen-a3211410/" class="owl-lazy" src="img/lewis_cohen.png">
+                      </div> -->
+                      <!--.thumb-->
+                      <!-- <div class="info">
+                         <h4>Lewis Cohen</h4>
+                         <p>
+                            Legal
+                            <br>
+                            Partner, Hogan Lovells
+                         </p>
+                      </div> -->
+                      <!--.info-->
+                   <!-- </a> -->
+                   <!--.usr_box__item-->
+                <!-- </div> -->
+                <!--.col-->
+                <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="https://uk.linkedin.com/in/georgebasiladze" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/A2_George_Basiladze.jpg" alt="" class="owl-lazy" src="img/A2_George_Basiladze.jpg">
+                         <img src="img/A2_George_Basiladze.jpg" alt="" class="owl-lazy" style="display: none">
+                      </div> -->
+                      <!--.thumb-->
+                      <!-- <div class="info">
+                         <h4>George Basiladze</h4>
+                         <p>
+                            Financial System
+                            <br>
+                            Co-Founder, Cryptopay Ltd
+                         </p>
+                      </div> -->
+                      <!--.info-->
+                   <!-- </a> -->
+                   <!--.usr_box__item-->
+                <!-- </div> -->
+                <!--.col-->
+                <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="https://uk.linkedin.com/in/dgunyashov" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/A3_Dmitry_Gunyashov.jpg" alt="" class="owl-lazy" src="img/A3_Dmitry_Gunyashov.jpg">
+                         <img src="img/A3_Dmitry_Gunyashov.jpg" alt="" class="owl-lazy" style="display: none">
+                      </div> -->
+                      <!--.thumb-->
+                      <!-- <div class="info">
+                         <h4>Dmitry Gunyashov</h4>
+                         <p>
+                            Payments and Compliance
+                            <br>
+                            Co-Founder, Cryptopay Ltd
+                         </p>
+                      </div> -->
+                      <!--.info-->
+                   <!-- </a> -->
+                   <!--.usr_box__item-->
+                <!-- </div> -->
+                <!--.col-->
+                <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="https://www.linkedin.com/in/oleg-khovayko-78a2165" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/A4_Oleg_Khovayko.jpg" alt="" class="owl-lazy" src="img/A4_Oleg_Khovayko.jpg">
+                         <img src="img/A4_Oleg_Khovayko.jpg" alt="" class="owl-lazy" style="display: none">
+                      </div> -->
+                      <!--.thumb-->
+                      <!-- <div class="info">
+                         <h4>Oleg Khovayko</h4>
+                         <p>Blockchain<br> CTO, Emercoin</p>
+                      </div> -->
+                      <!--.info-->
+                   <!-- </a> -->
+                   <!--.usr_box__item-->
+                <!-- </div> -->
+                <!--.col-->
+                <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="https://cy.linkedin.com/in/andreas-ioannou-aa3585a8" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/A7_Andreas_Ioannou.jpg" alt="" class="owl-lazy" src="img/A7_Andreas_Ioannou.jpg">
+                         <img src="img/A7_Andreas_Ioannou.jpg" alt="" class="owl-lazy" style="display: none">
+                      </div> -->
+                      <!--.thumb-->
+                      <!-- <div class="info">
+                         <h4>Andreas Ioannou</h4>
+                         <p>
+                            Legal and Banking Services
+                            <br>
+                            Director, MMG Cyprus Ltd
+                         </p>
+                      </div> -->
+                      <!--.info-->
+                   <!-- </a> -->
+                   <!--.usr_box__item-->
+                <!-- </div> -->
+                <!--.col-->
+                <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="https://www.linkedin.com/in/pkravchenko/" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/kravch.jpg" alt="" class="owl-lazy" src="img/kravch.jpg">
+                         <img src="img/kravch.jpg" alt="" class="owl-lazy" style="display: none">
+                      </div> -->
+                      <!--.thumb-->
+                      <!-- <div class="info">
+                         <h4>Pavel Kravchenko</h4>
+                         <p>
+                            Banking, Payments, Security
+                            <br>
+                            Co-Founder, Attic Lab
+                         </p>
+                      </div> -->
+                      <!--.info-->
+                   <!-- </a> -->
+                   <!--.usr_box__item-->
+                <!-- </div> -->
+                <!--.col-->
+                <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="https://lt.linkedin.com/in/andrius-bogdanovicius-93125a1" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/A5_Andrius_Bogdanovicius.jpg" alt="" class="owl-lazy" src="img/A5_Andrius_Bogdanovicius.jpg">
+                         <img src="img/A5_Andrius_Bogdanovicius.jpg" alt="" class="owl-lazy" style="display: none">
+                      </div> -->
+                      <!--.thumb-->
+                      <!-- <div class="info">
+                         <h4>Andrius Bogdanovicius</h4>
+                         <p>
+                            Credit and Financing
+                            <br>
+                            Supervisory Board Member, Latvian Credit Bureau<br>
+                            Chairman of the Board, Lithuanian Consumer Leasing and Credit Association
+                         </p>
+                      </div> -->
+                      <!--.info-->
+                   <!-- </a> -->
+                   <!--.usr_box__item-->
+                <!-- </div> -->
+                <!--.col-->
+                <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="https://www.linkedin.com/in/dmitrilaush/" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/dmitri_laush.jpg" alt="https://www.linkedin.com/in/dmitrilaush/" class="owl-lazy" src="img/dmitri_laush.jpg">
+                      </div> -->
+                      <!--.thumb-->
+                      <!-- <div class="info">
+                         <h4>Dmitri Laush</h4>
+                         <p>
+                            Foreign Exchange, Integration
+                            <br>
+                            Partner, CEO at Admiral Markets
+                         </p>
+                      </div> -->
+                      <!--.info-->
+                   <!-- </a> -->
+                   <!--.usr_box__item-->
+                <!-- </div> -->
+                <!--.col-->
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="{{ .Params.thumb4_url }}" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/{{ .Params.thumb5_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb5_img }}">
+                         <img src="img/{{ .Params.thumb5_img }}" alt="" class="owl-lazy" style="display: none">
+                      </div>
+                      <!--.thumb-->
+                      <div class="info">
+                         <h4>{{ .Params.thumb5_header }}</h4>
+                         <p>{{ .Params.thumb5_para }}</p>
+                      </div>
+                      <!--.info-->
+                   </a>
+                   <!--.usr_box__item-->
+                </div>
+                <!--.col-->
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="{{ .Params.thumb6_url }}" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/{{ .Params.thumb6_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb6_img }}">
+                         <img src="img/{{ .Params.thumb6_img }}" alt="" class="owl-lazy" style="display: none">
+                      </div>
+                      <!--.thumb-->
+                      <div class="info">
+                         <h4>{{ .Params.thumb6_header }}</h4>
+                         <p>{{ .Params.thumb6_para }}</p>
+                      </div>
+                      <!--.info-->
+                   </a>
+                   <!--.usr_box__item-->
+                </div>
+                <!--.col-->
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a target="_blank" href="{{ .Params.thumb7_url }}" class="usr_box__item">
+                      <div class="thumb">
+                         <img data-src="img/{{ .Params.thumb7_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb7_img }}">
+                         <img src="img/{{ .Params.thumb7_img }}" alt="" class="owl-lazy" style="display: none">
+                      </div>
+                      <!--.thumb-->
+                      <div class="info">
+                         <h4>{{ .Params.thumb7_header }}</h4>
+                         <p>{{ .Params.thumb7_para }}</p>
+                      </div>
+                      <!--.info-->
+                   </a>
+                   <!--.usr_box__item-->
+                </div>
+                <!--.col-->
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                   <a href="#" class="usr_box__item usr_box__item-plus" data-dismiss="modal" data-toggle="modal" data-target="#modal_advisor">
+                      <div class="thumb">
+                         <img data-src="img/{{ .Params.usr_box_img }}" alt="" class="owl-lazy" src="img/{{ .Params.usr_box_img }}">
+                      </div>
+                      <!--.thumb-->
+                      <div class="info">
+                         <h4>{{ .Params.usr_box_header }}</h4>
+                         <p>{{ .Params.usr_box_paragraph }}</p>
+                      </div>
+                      <!--.info-->
+                   </a>
+                   <!--.usr_box__item-->
+                </div>
+                <!--.col-->
+             </div>
+             <!--.row-->
+          </div>
+          <!--.usr_box__list-->
+       </div>
+    </div>
+    <!--.usr_box-->
+    {{end}}
+  {{end}}
+{{end}}

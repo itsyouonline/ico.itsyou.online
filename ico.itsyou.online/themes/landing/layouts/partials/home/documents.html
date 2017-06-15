@@ -1,0 +1,57 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "documents" }}
+        <div id="documents" class="whitepaper container">
+           <div class="whitepaper__title">
+              <h3>{{ .Params.header }}</h3>
+           </div>
+           <!--.whitepaper__title-->
+           <div class="whitepaper__body">
+              <!-- <p>Coming soon. <a href="#" data-dismiss="modal" data-toggle="modal" data-target="#modal_subscribe">Subscribe</a> for updates.</p> -->
+              <!-- 			<li><a href="#">White paper</a></li> -->
+              <div class="col-md-6">
+                 <ul class="list-unstyled documents-list">
+                    <li>
+                       <a target="_blank" href="{{ .Params.doc1_url }}">
+                       {{ .Params.doc1_txt }}
+                       </a>
+                    </li>
+                    <li>
+                       <a target="_blank" href="{{ .Params.doc2_url }}">
+                       {{ .Params.doc2_txt }}
+                       </a>
+                    </li>
+                    <li>
+                       <a target="_blank" href="{{ .Params.doc3_url }}">
+                       {{ .Params.doc3_txt }}
+                       </a>
+                    </li>
+                 </ul>
+              </div>
+              <div class="col-md-6">
+                 <ul class="list-unstyled documents-list">
+                   <li>
+                      <a target="_blank" href="{{ .Params.doc4_url }}">
+                      {{ .Params.doc4_txt }}
+                      </a>
+                   </li>
+                   <li>
+                      <a target="_blank" href="{{ .Params.doc5_url }}">
+                      {{ .Params.doc5_txt }}
+                      </a>
+                   </li>
+                   <li>
+                      <a target="_blank" href="{{ .Params.doc6_url }}">
+                      {{ .Params.doc6_txt }}
+                      </a>
+                   </li>
+                 </ul>
+              </div>
+              <div class="clearfix"></div>
+           </div>
+           <!--.whitepaper__body-->
+        </div>
+        <!--.whitepaper-->
+    {{end}}
+  {{end}}
+{{end}}

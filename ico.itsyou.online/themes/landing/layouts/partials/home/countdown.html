@@ -1,0 +1,66 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "countdown" }}
+    <!--.top-->
+      <div class="main_page">
+         <div class="main_page__bg"><img src="img/bg-timer.png"></div>
+         <div class="container">
+            <div class="top_countdown ">
+               <div class="top_countdown__in">
+                  <h2>{{ .Params.header }}</h2>
+                  <p>{{ .Params.description }}</p>
+                  <div class="top__timer">
+                     <h4>{{ .Params.bonus }}</h4>
+                     <div class="timer__items">
+                        <div class="timer__item">
+                           <div class="numb b_timer__d">{{ .Params.timer__d }}</div>
+                           <div class="txt b_timer__d-txt">{{ .Params.timer__d_txt }}</div>
+                        </div>
+                        <div class="timer__item">
+                           <div class="numb b_timer__h">{{ .Params.timer__h }}</div>
+                           <div class="txt b_timer__h-txt">{{ .Params.timer__h_txt }}</div>
+                        </div>
+                        <div class="timer__item">
+                           <div class="numb b_timer__m">{{ .Params.timer__m }}</div>
+                           <div class="txt b_timer__m-txt">{{ .Params.timer__m_txt }}</div>
+                        </div>
+                        <div class="timer__item">
+                           <div class="numb b_timer__s">{{ .Params.timer__s }}</div>
+                           <div class="txt b_timer__s-txt">{{ .Params.timer__s_txt }}</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="top_countdown__btns">
+                     <a href="{{ .Params.countdown__btn1_url }}">
+                     <button class="btn btn-green">
+                     {{ .Params.countdown__btn1_txt }}
+                     </button>
+                     </a>
+                     <a target="_blank" href="{{ .Params.countdown__btn2_url }}">
+                     <button class="btn btn-white">{{ .Params.countdown__btn1_txt }}</button>
+                     </a>
+                     <button class="btn btn-white" id="video-toggle">{{ .Params.video_btn }}</button>
+                  </div>
+                  <!--.top_countdown__btns-->
+                  <div class="already_invested">
+                     <h2>{{ .Params.amount_header }}</h2>
+                     <div class="total_invested">
+                        <div class="total_invested__item">
+                           <img src="img/{{ .Params.btc_logo }}" alt="" class="cur_logo btc_logo">
+                           <span class="amount amount_btc">{{ .Params.amount_btc }}</span>
+                           <span class="cur_code">{{ .Params.cur_code }}</span>
+                        </div>
+                        <div class="total_invested__item">
+                           <img src="img/{{ .Params.usd_logo }}" alt="" class="cur_logo usd_logo">
+                           <span class="amount amount_usd">{{ .Params.amount_usd }}</span>
+                           <span class="cur_code">{{ .Params.cur_code2 }}</span>
+                        </div>
+                     </div>
+                  </div>
+                  <!--.top_countdown__in-->
+               </div>
+               <!--.top_countdown-->
+            </div>
+          {{end}}
+      {{end}}
+    {{end}}

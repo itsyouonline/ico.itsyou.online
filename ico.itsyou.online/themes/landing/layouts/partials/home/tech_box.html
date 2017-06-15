@@ -1,0 +1,60 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "tech_box" }}
+      <div class="tech_box">
+         <div class="container">
+            <div class="tech_box__in">
+               <h3>Technologies</h3>
+               <div class="text-center row hidden-xs">
+                  <div class="tech_item col-md-3 col-sm-3 col-xs-6">
+                     <img src="img/{{ .Params.ssl_img }}" alt="SSL">
+                     <p>{{ .Params.ssl_paragraph }}</p>
+                  </div>
+                  <div class="tech_item col-md-3 col-sm-3 col-xs-6">
+                     <img src="img/{{ .Params.bio_img }}" alt="Biometrics">
+                     <p>{{ .Params.bio_paragraph }}</p>
+                  </div>
+                  <div class="tech_item col-md-3 col-sm-3 col-xs-6">
+                     <img src="img/{{ .Params.dec_img }}" alt="Decentralised Ledgers">
+                     <p>{{ .Params.dec_paragraph }}</p>
+                  </div>
+                  <div class="tech_item col-md-3 col-sm-3 col-xs-6">
+                     <img src="img/{{ .Params.sma_img }}" alt="Smart Contracts">
+                     <p>{{ .Params.sma_paragraph }}</p>
+                  </div>
+               </div>
+               <div class="text-center row hidden-xs">
+                  <div class="tech_item col-md-3 col-sm-3 col-xs-6">
+                     <img src="img/{{ .Params.api_img }}" alt="Open API">
+                     <p>{{ .Params.api_paragraph }}</p>
+                  </div>
+                  <div class="tech_item col-md-3 col-sm-3 col-xs-6">
+                     <img src="img/{{ .Params.int_img }}" alt="Internet of Things">
+                     <p>{{ .Params.int_paragraph }}</p>
+                  </div>
+                  <div class="tech_item col-md-3 col-sm-3 col-xs-6">
+                     <img src="img/{{ .Params.dat_img }}" alt="Big Data">
+                     <p>{{ .Params.dat_paragraph }}</p>
+                  </div>
+                  <div class="tech_item col-md-3 col-sm-3 col-xs-6">
+                     <img src="img/{{ .Params.al_img }}" alt="Applied AI">
+                     <p>{{ .Params.al_paragraph }}</p>
+                  </div>
+               </div>
+               <p>{{ .Content }}</p>
+               <blockquote class="blockquote">
+                  <img src="img/{{ .Params.blockquote_img }}" class="quote-image" width="45" height="45">
+                  <div>
+                     <p class="about_comment">{{ .Params.comment }}</p>
+                     <p class="about_comment_author">{{ .Params.comment_author }}</p>
+                  </div>
+               </blockquote>
+            </div>
+         </div>
+      </div>
+      <!--.tech_box__in-->
+      </div>
+      <!--.tech_box-->
+    {{end}}
+  {{end}}
+{{end}}

@@ -1,0 +1,187 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "milestones" }}
+        <div class="container" id="milestones">
+           <div class="mmm_box rmap_box">
+              <div class="mmm_box__in">
+                 <div class="mmm_box__txt">
+                    <h3 class="text-center">{{ .Params.header }}</h3>
+                 </div>
+                 <div class="rmap clearfix hidden-xs">
+                    <div class="rmap__col">
+                       <h5>$1.5M</h5>
+                       <div class="numb">
+                          <span>1</span>
+                       </div>
+                       <h4>{{ .Params.rmap1_header }}</h4>
+                       <ul id="authorized">
+                          {{ range .Params.authorized }}
+                            <li>- {{ . }}</li>
+                          {{ end }}
+                        </ul>
+                    </div>
+                    <!--.rmap__col-->
+                    <div class="rmap__col">
+                       <h5>{{ .Params.rmap2_col }}</h5>
+                       <div class="numb">
+                          <span>{{ .Params.rmap2_span }}</span>
+                       </div>
+                       <h4>{{ .Params.rmap2_header }}</h4>
+                       <ul id="electronic">
+                         {{ range .Params.electronic }}
+                           <li>- {{ . }}</li>
+                         {{ end }}
+                       </ul>
+                    </div>
+                    <!--.rmap__col-->
+                    <div class="rmap__col">
+                       <h5>{{ .Params.rmap3_col }}</h5>
+                       <div class="numb">
+                          <span>{{ .Params.rmap3_span }}</span>
+                       </div>
+                       <h4>{{ .Params.rmap3_header }}</h4>
+                       <ul>
+                         {{ range .Params.commercialBank }}
+                           <li>- {{ . }}</li>
+                         {{ end }}
+                       </ul>
+                    </div>
+                    <!--.rmap__col-->
+                    <div class="rmap__col rmap__col--active">
+                       <h5>{{ .Params.rmap4_col }}</h5>
+                       <div class="numb">
+                          <span>{{ .Params.rmap4_span }}</span>
+                       </div>
+                       <h4>{{ .Params.rmap4_header }}</h4>
+                       <ul>
+                         {{ range .Params.digitalPass }}
+                           <li>- {{ . }}</li>
+                         {{ end }}
+                       </ul>
+                    </div>
+                    <!--.rmap__col-->
+                    <div class="rmap__col">
+                       <h5>{{ .Params.rmap5_col }}</h5>
+                       <div class="numb">
+                          <span>{{ .Params.rmap5_span }}</span>
+                       </div>
+                       <h4>{{ .Params.rmap5_header }}</h4>
+                       <ul>
+                         {{ range .Params.financialMarketplace }}
+                           <li>- {{ . }}</li>
+                         {{ end }}
+                       </ul>
+                    </div>
+                    <!--.rmap__col-->
+                 </div>
+                 <!--.rmap-->
+                 <div class="mar_box_acc visible-xs">
+                    <div class="mar_box_acc__item">
+                       <div class="mar_box_acc__title">
+                          <p>$ 1 500 000<br>
+                             Authorized Payment Institution
+                          </p>
+                       </div>
+                       <!--.mar_box_acc__title-->
+                       <div class="mar_box_acc__body">
+                          <ul>
+                             <li>- P2P Loans</li>
+                             <li>- Investment Portfolios</li>
+                             <li>- EBA Clearing</li>
+                             <li>- SWIFT Membership</li>
+                             <li>- EPC Rulebooks</li>
+                             <li>- API License*</li>
+                             <li>- Payment Services</li>
+                          </ul>
+                       </div>
+                       <!--.mar_box_acc__body-->
+                    </div>
+                    <!--.mar_box_acc__item-->
+                    <div class="mar_box_acc__item">
+                       <div class="mar_box_acc__title">
+                          <p>$ 3 000 000<br>
+                             Electronic Money Institution
+                          </p>
+                       </div>
+                       <!--.mar_box_acc__title-->
+                       <div class="mar_box_acc__body">
+                          <ul>
+                             <li>- Consumer and working capital loans</li>
+                             <li>- Foreign Exchange</li>
+                             <li>- Card Issuing and Payment Acquiring through a BIN Principal Member*</li>
+                             <li>- EMI License*</li>
+                          </ul>
+                       </div>
+                       <!--.mar_box_acc__body-->
+                    </div>
+                    <!--.mar_box_acc__item-->
+                    <div class="mar_box_acc__item">
+                       <div class="mar_box_acc__title">
+                          <p>$ 6 000 000<br>
+                             Commercial Bank
+                          </p>
+                       </div>
+                       <!--.mar_box_acc__title-->
+                       <div class="mar_box_acc__body">
+                          <ul>
+                             <li>- Credit Cards</li>
+                             <li>- Savings Deposits</li>
+                             <li>- Open API Apps</li>
+                             <li>- Card Scheme Membership</li>
+                             <li>- Bank License</li>
+                          </ul>
+                       </div>
+                       <!--.mar_box_acc__body-->
+                    </div>
+                    <!--.mar_box_acc__item-->
+                    <div class="mar_box_acc__item">
+                       <div class="mar_box_acc__title">
+                          <p>$ 10 000 000<br>
+                             Digital Pass
+                          </p>
+                       </div>
+                       <!--.mar_box_acc__title-->
+                       <div class="mar_box_acc__body">
+                          <ul>
+                             <li>- Blockchain</li>
+                             <li>- Big Data</li>
+                             <li>- Applied AI</li>
+                             <li>- Internet of Things</li>
+                             <li>- eSignatures</li>
+                             <li>- eSeals</li>
+                          </ul>
+                       </div>
+                       <!--.mar_box_acc__body-->
+                    </div>
+                    <!--.mar_box_acc__item-->
+                    <div class="mar_box_acc__item">
+                       <div class="mar_box_acc__title">
+                          <p>$ 25 000 000<br>
+                             SME Financial Marketplaces
+                          </p>
+                       </div>
+                       <!--.mar_box_acc__title-->
+                       <div class="mar_box_acc__body">
+                          <ul>
+                             <li>- Venture Capital</li>
+                             <li>- Crowdfunding</li>
+                             <li>- Insurance</li>
+                             <li>- Brokerage</li>
+                          </ul>
+                       </div>
+                       <!--.mar_box_acc__body-->
+                    </div>
+                    <!--.mar_box_acc__item-->
+                 </div>
+                 <!--.mar_box_acc-->
+                 <p class="hidden-xs">{{ .Params.note }}</p>
+              </div>
+              <!--.mmm_box__in-->
+           </div>
+           <!--.mmm_box-->
+        </div>
+     </div>
+     <!--.main_page-->
+    {{end}}
+  {{end}}
+{{end}}

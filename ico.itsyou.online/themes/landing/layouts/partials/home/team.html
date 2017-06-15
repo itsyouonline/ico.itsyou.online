@@ -1,0 +1,263 @@
+{{ range $element :=  .Data.Pages }}
+  {{ if eq .Section "home" }}
+    {{ if eq .Title "team" }}
+        <div class="usr_box" id="team">
+           <div class="container">
+              <div class="usr_box__top">
+                 <h3>{{ .Params.header }}</h3>
+              </div>
+              <!--.usr_box__top-->
+              <div class="usr_box__list">
+                 <div class="usr_box__list-info visible-xs"></div>
+                 <div class="row">
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="{{ .Params.thumb1_url }}" class="usr_box__item">
+                          <div class="thumb">
+                             <img alt="" class="owl-lazy" src="img/{{ .Params.thumb1_img }}">
+                          </div>
+                          <!--.thumb-->
+                          <div class="info">
+                             <h4>{{ .Params.thumb1_name }}</h4>
+                             <p>
+                                {{ .Params.thumb1_title }}
+                                <br>
+                                {{ .Params.thumb1_title_span }}
+                             </p>
+                          </div>
+                          <!--.info-->
+                       </a>
+                       <!--.usr_box__item-->
+                    </div>
+                    <!--.col-->
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="{{ .Params.thumb2_url }}" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/{{ .Params.thumb2_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb2_img }}">
+                             <img src="img/{{ .Params.thumb2_img }}" alt="" class="owl-lazy" style="display: none">
+                          </div>
+                          <!--.thumb-->
+                          <div class="info">
+                             <h4>{{ .Params.thumb2_name }}</h4>
+                             <p>
+                                {{ .Params.thumb2_title }}
+                                <br>
+                                {{ .Params.thumb2_title_span }}
+                             </p>
+                          </div>
+                          <!--.info-->
+                       </a>
+                       <!--.usr_box__item-->
+                    </div>
+                    <!--.col-->
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="{{ .Params.thumb3_url }}" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/{{ .Params.thumb3_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb3_img }}">
+                             <img src="img/{{ .Params.thumb3_img }}" alt="" class="owl-lazy" style="display: none">
+                          </div>
+                          <!--.thumb-->
+                          <div class="info">
+                             <h4>{{ .Params.thumb3_name }}</h4>
+                             <p>
+                                {{ .Params.thumb3_title }}
+                                <br>
+                                {{ .Params.thumb3_title_span }}
+                             </p>
+                          </div>
+                          <!--.info-->
+                       </a>
+                       <!--.usr_box__item-->
+                    </div>
+                    <!--.col-->
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="{{ .Params.thumb4_url }}" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/{{ .Params.thumb4_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb4_img }}">
+                             <img src="img/{{ .Params.thumb4_img }}" alt="" class="owl-lazy" style="display: none">
+                          </div>
+                          <!--.thumb-->
+                          <div class="info">
+                             <h4>{{ .Params.thumb4_name }}</h4>
+                             <p>
+                                {{ .Params.thumb4_title }}
+                                <br>
+                                {{ .Params.thumb4_title_span }}
+                             </p>
+                          </div>
+                          <!--.info-->
+                       </a>
+                       <!--.usr_box__item-->
+                    </div>
+                    <!--.col-->
+                    <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="{{ .Params.thumb4_url }}" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/{{ .Params.thumb4_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb4_img }}">
+                             <img src="img/{{ .Params.thumb4_img }}" alt="" class="owl-lazy" style="display: none">
+                          </div> -->
+                          <!--.thumb-->
+                          <!-- <div class="info">
+                             <h4>{{ .Params.thumb4_name }}</h4>
+                             <p>
+                                {{ .Params.thumb4_title }}
+                                <br>
+                                {{ .Params.thumb4_title_span }}
+                             </p>
+                          </div> -->
+                          <!--.info-->
+                       <!-- </a> -->
+                       <!--.usr_box__item-->
+                    <!-- </div> -->
+                    <!--.col-->
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="{{ .Params.thumb5_url }}" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/{{ .Params.thumb5_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb5_img }}">
+                             <img src="img/{{ .Params.thumb5_img }}" alt="" class="owl-lazy" style="display: none">
+                          </div>
+                          <!--.thumb-->
+                          <div class="info">
+                             <h4>{{ .Params.thumb5_name }}</h4>
+                             <p>
+                                {{ .Params.thumb5_title_span }}
+                                <br>
+                                {{ .Params.thumb5_title_span }}
+                             </p>
+                          </div>
+                          <!--.info-->
+                       </a>
+                       <!--.usr_box__item-->
+                    </div>
+                    <!--.col-->
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="{{ .Params.thumb6_url }}" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/{{ .Params.thumb6_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb6_img }}">
+                             <img src="img/{{ .Params.thumb6_img }}" alt="" class="owl-lazy" style="display: none">
+                          </div>
+                          <!--.thumb-->
+                          <div class="info">
+                             <h4>{{ .Params.thumb6_name }}</h4>
+                             <p>
+                                {{ .Params.thumb6_title }}
+                                <br>
+                                {{ .Params.thumb6_title_span }}
+                             </p>
+                          </div>
+                          <!--.info-->
+                       </a>
+                       <!--.usr_box__item-->
+                    </div>
+                    <!--.col-->
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="{{ .Params.thumb7_url }}" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/{{ .Params.thumb7_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb7_img }}">
+                             <img src="img/{{ .Params.thumb7_img }}" alt="" class="owl-lazy" style="display: none">
+                          </div>
+                          <!--.thumb-->
+                          <div class="info">
+                             <h4>{{ .Params.thumb7_name }}</h4>
+                             <p>
+                                {{ .Params.thumb7_title }}
+                                <br>
+                                {{ .Params.thumb7_title_span }}
+                             </p>
+                          </div>
+                          <!--.info-->
+                       </a>
+                       <!--.usr_box__item-->
+                    </div>
+                    <!--.col-->
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="{{ .Params.thumb8_url }}" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/{{ .Params.thumb8_img }}" alt="" class="owl-lazy" src="img/{{ .Params.thumb8_img }}">
+                             <img src="img/{{ .Params.thumb8_img }}" alt="" class="owl-lazy" style="display: none">
+                          </div>
+                          <!--.thumb-->
+                          <div class="info">
+                             <h4>{{ .Params.thumb8_name }}</h4>
+                             <p>
+                                {{ .Params.thumb8_title }}
+                                <br>
+                                {{ .Params.thumb8_title_span }}
+                             </p>
+                          </div>
+                          <!--.info-->
+                       </a>
+                       <!--.usr_box__item-->
+                    </div>
+                    <!--.col-->
+                    <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="https://www.linkedin.com/in/valentinsavchenko/" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/Val_3_preview.jpg" alt="" class="owl-lazy" src="img/Val_3_preview.jpg">
+                             <img src="img/Val_3_preview.jpg" alt="" class="owl-lazy" style="display: none">
+                          </div> -->
+                          <!--.thumb-->
+                          <!-- <div class="info">
+                             <h4>Valentin Savchenko</h4>
+                             <p>
+                                Chief of Digital Marketing
+                                <br>
+                                HashCoins OÜ
+                             </p>
+                          </div> -->
+                          <!--.info-->
+                       <!-- </a> -->
+                       <!--.usr_box__item-->
+                    <!-- </div> -->
+                    <!--.col-->
+                    <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="https://www.linkedin.com/in/pavel-tsihhotski-6a0027142/" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/Pavel_3_preview.jpg" alt="" class="owl-lazy" src="img/Pavel_3_preview.jpg">
+                             <img src="img/Pavel_3_preview.jpg" alt="" class="owl-lazy" style="display: none">
+                          </div> -->
+                          <!--.thumb-->
+                          <!-- <div class="info">
+                             <h4>Pavel Tsihhotski</h4>
+                             <p>
+                                Support and Community
+                                Community Manager
+                                <br>
+                                HashCoins OÜ
+                             </p>
+                          </div> -->
+                          <!--.info-->
+                       <!-- </a> -->
+                       <!--.usr_box__item-->
+                    <!-- </div> -->
+                    <!--.col-->
+                    <!-- <div class="col-md-3 col-sm-4 col-xs-12">
+                       <a target="_blank" href="https://www.linkedin.com/in/alexandr-gromov-89302556/" class="usr_box__item">
+                          <div class="thumb">
+                             <img data-src="img/AG.jpg" alt="" class="owl-lazy" src="img/AG.jpg">
+                             <img src="img/AG.jpg" alt="" class="owl-lazy" style="display: none">
+                          </div> -->
+                          <!--.thumb-->
+                          <!-- <div class="info">
+                             <h4>Alexandr Gromov</h4>
+                             <p>
+                                Marketing
+                                <br>
+                                CMO
+                                <br>
+                                HashCoins OÜ
+                             </p>
+                          </div> -->
+                          <!--.info-->
+                       <!-- </a> -->
+                       <!--.usr_box__item-->
+                    <!-- </div> -->
+                    <!--.col-->
+                 <!-- </div> -->
+                 <!--.row-->
+              </div>
+              <!--.usr_box__list-->
+           </div>
+        </div>
+    {{end}}
+  {{end}}
+{{end}}
